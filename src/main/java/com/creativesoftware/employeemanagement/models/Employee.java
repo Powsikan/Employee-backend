@@ -14,7 +14,7 @@ public class Employee {
     private long id;
     private String name;
     private String email;
-    private String dateOfBirth;
+    private String dob;
     @ElementCollection
     private List<String> skills=new ArrayList<>();
 }
