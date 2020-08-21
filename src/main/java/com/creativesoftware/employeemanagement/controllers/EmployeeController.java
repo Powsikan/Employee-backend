@@ -3,6 +3,8 @@ package com.creativesoftware.employeemanagement.controllers;
 import com.creativesoftware.employeemanagement.models.Employee;
 import com.creativesoftware.employeemanagement.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,8 +38,8 @@ public class EmployeeController {
     }
 
     @DeleteMapping("delete/{id}")
-    public String deleteEmployee(@PathVariable long id){
+    public ResponseEntity deleteEmployee(@PathVariable long id){
          employeeRepository.deleteById(id);
-         return "Employee Deleted";
+         return new ResponseEntity("User Deleted", HttpStatus.OK);
     }
 }
