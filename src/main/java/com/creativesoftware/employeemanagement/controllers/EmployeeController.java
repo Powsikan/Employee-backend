@@ -38,8 +38,8 @@ public class EmployeeController {
     }
 
     @DeleteMapping("delete/{id}")
-    public ResponseEntity deleteEmployee(@PathVariable long id){
+    public String deleteEmployee(@PathVariable long id){
          employeeRepository.deleteById(id);
-         return new ResponseEntity("User Deleted", HttpStatus.OK);
+         return "User Deleted";
     }
 }
